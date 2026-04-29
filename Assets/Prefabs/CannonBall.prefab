@@ -160,6 +160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3566566584906913266}
+  - component: {fileID: 89087107072893943}
   m_Layer: 0
   m_Name: CannonBall
   m_TagString: Untagged
@@ -184,6 +185,18 @@ Transform:
   - {fileID: 3658046005151253487}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &89087107072893943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6330221376790265878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b51a7befd593f24a8340ebecdce1086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CannonBall
 --- !u!1001 &3556957755852897626
 PrefabInstance:
   m_ObjectHideFlags: 0

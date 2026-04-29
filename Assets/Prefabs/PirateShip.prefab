@@ -121,6 +121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   moveAction: {fileID: 4949024531761484299, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   clickAction: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  leftCannon: {fileID: 2445984465666938653}
+  rightCannon: {fileID: 8006311538180859655}
   marker: {fileID: 0}
 --- !u!1 &3053674350892710746
 GameObject:

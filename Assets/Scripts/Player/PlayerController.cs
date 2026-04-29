@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
@@ -7,16 +8,27 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private InputActionReference moveAction;
     [SerializeField] private InputActionReference clickAction;
     
+    [SerializeField] private Cannon leftCannon;
+    [SerializeField] private Cannon rightCannon;
+    
     [SerializeField] private Transform marker;
     
     private NavMeshAgent _agent;
     private LineRenderer _lineRenderer;
-    
-    
+
+    private CannonBall[] _bullets;
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
         _lineRenderer = GetComponentInChildren<LineRenderer>();
+    }
+
+    private void Start()
+    {
+        _bullets = Resources.LoadAll<CannonBall>("Bullets");
+
+        leftCannon.SetBulletPrefab(_bullets[(int) CannonBall.AmmoType.Fire]);
+        rightCannon.SetBulletPrefab(_bullets[(int) CannonBall.AmmoType.Fire]);
     }
 
     private void OnEnable()

@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class FloatObject : MonoBehaviour
 {
@@ -10,5 +11,10 @@ public class FloatObject : MonoBehaviour
     {
         var duration = Random.Range(3.5f, MaxDuration);
         transform.DOMoveY(positionVariationRange * -1.0f, duration).SetRelative().SetEase(Ease.InQuad).SetLoops(-1, LoopType.Yoyo);
+    }
+
+    private void OnDestroy()
+    {
+        transform.DOKill(true);
     }
 }

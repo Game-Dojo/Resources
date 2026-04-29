@@ -6,7 +6,7 @@ public class Cannon : MonoBehaviour
     [SerializeField] private Transform ballSpawner;
     [SerializeField] private LayerMask enemiesLayer;
     
-    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private CannonBall bulletPrefab;
     private void FixedUpdate()
     {
        
@@ -17,8 +17,13 @@ public class Cannon : MonoBehaviour
 
     private void Fire()
     {
-        GameObject bullet = Instantiate(bulletPrefab, ballSpawner.position, Quaternion.identity);
-        Rigidbody body = bullet.AddComponent<Rigidbody>();
+        CannonBall bullet = Instantiate(bulletPrefab, ballSpawner.position, Quaternion.identity);
+        Rigidbody body = bullet.gameObject.AddComponent<Rigidbody>();
         if (body) body.AddForce(transform.forward * 30f, ForceMode.Impulse);
+    }
+
+    public void SetBulletPrefab(CannonBall prefab)
+    {
+        bulletPrefab = prefab;
     }
 }
